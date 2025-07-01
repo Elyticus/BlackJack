@@ -32,7 +32,6 @@ startGameBtn.addEventListener("click", () => {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       cards.innerHTML = `
         <img class="cards-el" src="${data.cards[0].image}" />
         <img class="cards-el" src="${data.cards[1].image}" />
@@ -64,7 +63,6 @@ function getNewCard() {
   fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       cards.innerHTML += `
         <img class="cards-el" src="${data.cards[0].image}" />
       `;
@@ -84,18 +82,22 @@ newCardBtn.addEventListener("click", () => {
 
 function updateMessage() {
   if (currentSum === 21) {
-    messageEl.textContent = "You got BlackJack";
+    messageEl.textContent = "You got BlackJack!!";
     confettiEl.classList.add("confetti-animation");
     newCardBtn.disabled = true;
+    messageEl.style.color = "yellow";
     updateChips(50); // Reward 50 chips for Blackjack
   } else if (currentSum < 21) {
-    messageEl.textContent = "Do you want to draw another card";
+    messageEl.textContent = "Do you want to draw another card?";
     confettiEl.classList.remove("confetti-animation");
     newCardBtn.disabled = false;
+    messageEl.style.color = "black";
   } else {
-    messageEl.textContent = "You are out of the game";
+    messageEl.textContent = "You are out of the game!";
+    messageEl.style.color = "rgb(10, 209, 227)";
     confettiEl.classList.remove("confetti-animation");
     newCardBtn.disabled = true;
+    gameMessage.textContent = "You cannot draw more cards";
   }
 }
 

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Moderustic:wght@300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 body {
-  background-color: rgb(14, 166, 14);
+  background-color: rgb(4, 137, 4);
   font-family: "Lexend Deca", serif;
   display: flex;
   justify-content: center;
@@ -144,4 +144,15 @@ button:hover {
   outline: none;
   padding: 0.5em;
   text-align: center;
+  color: white;
+  letter-spacing: 2px;
+}
+
+#cards_el {
+  display: flex;
+  justify-content: center;
+  padding: 0 3em;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  box-sizing: border-box;
 }
